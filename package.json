@@ -1,0 +1,33 @@
+{
+  "name": "shadeswap",
+  "version": "0.1.0",
+  "description": "Private swaps for humans and AI agents — powered by zero-knowledge proofs",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "dev": "tsup src/index.ts --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": ["zk", "swap", "solana", "privacy", "ai-agent", "mcp", "jupiter", "defi"],
+  "author": "ShadeSwap <dev@shadeswap.io>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ShadeSwapAgent/shadeswap-sdk.git"
+  },
+  "homepage": "https://shadeswap.io",
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  }
+}
