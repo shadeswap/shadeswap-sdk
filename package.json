@@ -1,6 +1,6 @@
 {
   "name": "shadeswap",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Private swaps for humans and AI agents — powered by zero-knowledge proofs",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -24,7 +24,7 @@
     "type": "git",
     "url": "https://github.com/ShadeSwapAgent/shadeswap-sdk.git"
   },
-  "homepage": "https://shadeswap.io",
+  "homepage": "https://www.shadeswap.org",
   "devDependencies": {
     "@types/node": "^22.0.0",
     "tsup": "^8.5.1",

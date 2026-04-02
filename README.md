@@ -8,7 +8,7 @@
 
 Swap in the Shade. No trace. No identity. No limits.
 
-[![Website](https://img.shields.io/badge/WEBSITE-shadeswap.io-8B5CF6?style=for-the-badge&logo=safari&logoColor=white)](https://shadeswap.io)
+[![Website](https://img.shields.io/badge/WEBSITE-shadeswap.org-8B5CF6?style=for-the-badge&logo=safari&logoColor=white)](https://www.shadeswap.org)
 [![Twitter](https://img.shields.io/badge/TWITTER-%40ShadeSwapAgent-8B5CF6?style=for-the-badge&logo=x&logoColor=white)](https://x.com/ShadeSwapAgent)
 [![npm](https://img.shields.io/npm/v/shadeswap?style=for-the-badge&label=NPM&color=8B5CF6&logo=npm&logoColor=white)](https://www.npmjs.com/package/shadeswap)
 [![Stars](https://img.shields.io/github/stars/mppfinance/shadeswap-sdk?style=for-the-badge&label=STARS&color=8B5CF6)](https://github.com/mppfinance/shadeswap-sdk)
