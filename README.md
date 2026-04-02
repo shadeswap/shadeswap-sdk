@@ -1,17 +1,17 @@
 <div align="center">
 
+<img src="https://raw.githubusercontent.com/mppfinance/shadeswap-sdk/main/bannershade.png" width="100%" alt="ShadeSwap" />
+
 # ShadeSwap
 
 **Private swaps for humans and AI agents — powered by zero-knowledge proofs**
 
 Swap in the Shade. No trace. No identity. No limits.
 
-[![npm version](https://img.shields.io/npm/v/shadeswap?color=8B5CF6&label=npm)](https://www.npmjs.com/package/shadeswap)
-[![License: MIT](https://img.shields.io/badge/license-MIT-8B5CF6)](LICENSE)
-[![CI](https://github.com/ShadeSwapAgent/shadeswap-sdk/actions/workflows/ci.yml/badge.svg)](https://github.com/ShadeSwapAgent/shadeswap-sdk/actions)
-[![Twitter](https://img.shields.io/twitter/follow/ShadeSwapAgent?style=social)](https://x.com/ShadeSwapAgent)
-
-[Website](https://shadeswap.io) · [Docs](https://github.com/ShadeSwapAgent/shadeswap-sdk/tree/main/docs) · [NPM](https://www.npmjs.com/package/shadeswap)
+[![Website](https://img.shields.io/badge/WEBSITE-shadeswap.io-8B5CF6?style=for-the-badge&logo=safari&logoColor=white)](https://shadeswap.io)
+[![Twitter](https://img.shields.io/badge/TWITTER-%40ShadeSwapAgent-8B5CF6?style=for-the-badge&logo=x&logoColor=white)](https://x.com/ShadeSwapAgent)
+[![npm](https://img.shields.io/npm/v/shadeswap?style=for-the-badge&label=NPM&color=8B5CF6&logo=npm&logoColor=white)](https://www.npmjs.com/package/shadeswap)
+[![Stars](https://img.shields.io/github/stars/mppfinance/shadeswap-sdk?style=for-the-badge&label=STARS&color=8B5CF6)](https://github.com/mppfinance/shadeswap-sdk)
 
 </div>
 
@@ -38,7 +38,7 @@ const result = await swap.swap({
     requireApproval: false,
   }
 })
-// → swapped privately in 280ms. no trace.
+// swapped privately in 280ms. no trace.
 ```
 
 ---
@@ -80,8 +80,8 @@ const result = await client.swap({
   privacy: 'zk',
 })
 
-console.log(result.txHash)    // 64-char hash
-console.log(result.amountOut) // 5 USDC (minus fees)
+console.log(result.txHash)
+console.log(result.amountOut)
 ```
 
 ### With approval gate
@@ -90,8 +90,8 @@ console.log(result.amountOut) // 5 USDC (minus fees)
 const client = new ShadeSwap({
   agentId: 'trading-agent-01',
   onApprovalRequired: async (req) => {
-    console.log(`Agent wants to swap ${req.amount} ${req.from} → ${req.to}`)
-    return true // or false to block
+    console.log(`Agent wants to swap ${req.amount} ${req.from} to ${req.to}`)
+    return true
   }
 })
 
@@ -107,49 +107,14 @@ const result = await client.swap({
 })
 ```
 
-### Get quote
-
-```ts
-const quote = await client.quote('SOL', 'USDC', 10)
-console.log(quote.estimatedOutput)
-console.log(quote.priceImpact)
-console.log(quote.route) // ['SOL', 'USDC']
-```
-
-### MCP integration (Claude / GPT / Cursor)
+### MCP integration
 
 ```ts
 import { ShadeSwapMCP } from 'shadeswap'
 
-const server = new ShadeSwapMCP({
-  agentId: process.env.AGENT_ID,
-})
-
-// tools() returns MCP-compatible tool definitions
+const server = new ShadeSwapMCP({ agentId: process.env.AGENT_ID })
 const tools = server.tools()
-
-// call() executes the tool
-const result = await server.call('swap', {
-  from: 'SOL',
-  to: 'USDC',
-  amount: 5,
-  privacy: 'zk',
-})
-```
-
-**Claude Desktop config (`claude_desktop_config.json`):**
-```json
-{
-  "mcpServers": {
-    "shadeswap": {
-      "command": "node",
-      "args": ["dist/cli.js", "--mcp"],
-      "env": {
-        "AGENT_ID": "your-agent-id"
-      }
-    }
-  }
-}
+const result = await server.call('swap', { from: 'SOL', to: 'USDC', amount: 5 })
 ```
 
 ---
@@ -158,10 +123,10 @@ const result = await server.call('swap', {
 
 ```ts
 rules: {
-  requireApproval: true,     // gate every swap before execution
-  maxSlippage: 1,            // block if slippage > 1%
-  maxAmountUsd: 500,         // block swaps over $500
-  allowedTokens: ['USDC', 'SOL', 'JUP'], // whitelist
+  requireApproval: true,
+  maxSlippage: 1,
+  maxAmountUsd: 500,
+  allowedTokens: ['USDC', 'SOL', 'JUP'],
 }
 ```
 
@@ -176,7 +141,6 @@ rules: {
 - [ ] Multi-hop ZK routing (Q2 2026)
 - [ ] Cross-chain swaps (Q3 2026)
 - [ ] Agent portfolio management (Q3 2026)
-- [ ] DAO governance (Q4 2026)
 
 ---
 
